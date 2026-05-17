@@ -1,0 +1,93 @@
+{
+  "name": "@veridex/agents-treasury",
+  "version": "0.1.0",
+  "description": "Veridex Treasury Kit — opinionated, safe money-movement primitives for agents (balance, transfer, escrow, x402, idempotency, ceilings, time-locks, sanctions, signed Evidence Bundles, SBT reputation, developer-portal telemetry).",
+  "license": "MIT",
+  "author": "Veridex Team",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./policy": {
+      "types": "./dist/policy/index.d.ts",
+      "import": "./dist/policy/index.mjs",
+      "require": "./dist/policy/index.js"
+    },
+    "./portal": {
+      "types": "./dist/portal/index.d.ts",
+      "import": "./dist/portal/index.mjs",
+      "require": "./dist/portal/index.js"
+    },
+    "./evidence": {
+      "types": "./dist/evidence/index.d.ts",
+      "import": "./dist/evidence/index.mjs",
+      "require": "./dist/evidence/index.js"
+    },
+    "./reputation": {
+      "types": "./dist/reputation/index.d.ts",
+      "import": "./dist/reputation/index.mjs",
+      "require": "./dist/reputation/index.js"
+    },
+    "./tools": {
+      "types": "./dist/tools/index.d.ts",
+      "import": "./dist/tools/index.mjs",
+      "require": "./dist/tools/index.js"
+    },
+    "./evals": {
+      "types": "./dist/evals/index.d.ts",
+      "import": "./dist/evals/index.mjs",
+      "require": "./dist/evals/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "zod": "^3.22.0"
+  },
+  "peerDependencies": {
+    "@veridex/agents": "^0.1.3",
+    "@veridex/agentic-payments": ">=2.0.4"
+  },
+  "peerDependenciesMeta": {
+    "@veridex/agentic-payments": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.2",
+    "@veridex/agents": "workspace:*",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "veridex",
+    "agents",
+    "treasury",
+    "payments",
+    "policy",
+    "x402",
+    "evidence",
+    "sbt",
+    "reputation"
+  ]
+}
