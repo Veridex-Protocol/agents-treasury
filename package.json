@@ -55,14 +55,15 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "tsc --noEmit",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "prepublishOnly": "bun run build"
   },
   "dependencies": {
     "zod": "^3.22.0"
   },
   "peerDependencies": {
-    "@veridex/agents": "^0.1.3",
-    "@veridex/agentic-payments": ">=2.0.4"
+    "@veridex/agents": "0.1.3",
+    "@veridex/agentic-payments": "2.0.6"
   },
   "peerDependenciesMeta": {
     "@veridex/agentic-payments": {
@@ -71,7 +72,7 @@
   },
   "devDependencies": {
     "@types/node": "^25.5.2",
-    "@veridex/agents": "workspace:*",
+    "@veridex/agents": "0.1.3",
     "tsup": "^8.0.0",
     "typescript": "^5.0.0",
     "vitest": "^1.0.0"
@@ -89,5 +90,16 @@
     "evidence",
     "sbt",
     "reputation"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Veridex-Protocol/agents-treasury.git"
+  },
+  "homepage": "https://github.com/Veridex-Protocol/agents-treasury#readme",
+  "bugs": {
+    "url": "https://github.com/Veridex-Protocol/agents-treasury/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }
