@@ -63,7 +63,7 @@
   },
   "peerDependencies": {
     "@veridex/agents": "0.1.5",
-    "@veridex/agentic-payments": "2.0.6"
+    "@veridex/agentic-payments": "2.0.7"
   },
   "peerDependenciesMeta": {
     "@veridex/agentic-payments": {
