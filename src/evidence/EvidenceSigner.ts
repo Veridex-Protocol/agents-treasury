@@ -35,13 +35,19 @@ export function canonicalJson(value: unknown): string {
     if (typeof v === 'number') return Number.isFinite(v) ? JSON.stringify(v) : 'null';
     if (typeof v === 'boolean' || typeof v === 'string') return JSON.stringify(v);
     if (typeof v === 'bigint') return JSON.stringify(v.toString());
-    if (Array.isArray(v)) return `[${v.map(stringify).join(',')}]`;
     if (typeof v === 'object') {
       if (seen.has(v as object)) throw new Error('cycle in canonicalJson');
       seen.add(v as object);
+      if (Array.isArray(v)) {
+        const res = `[${v.map(stringify).join(',')}]`;
+        seen.delete(v as object);
+        return res;
+      }
       const obj = v as Record<string, unknown>;
       const keys = Object.keys(obj).sort();
-      return `{${keys.map((k) => `${JSON.stringify(k)}:${stringify(obj[k])}`).join(',')}}`;
+      const res = `{${keys.map((k) => `${JSON.stringify(k)}:${stringify(obj[k])}`).join(',')}}`;
+      seen.delete(v as object);
+      return res;
     }
     return 'null';
   };
