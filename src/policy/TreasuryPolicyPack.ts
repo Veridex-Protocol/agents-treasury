@@ -70,7 +70,7 @@ function extractTransfer(ctx: PolicyContext): {
 }
 
 function getAmount(args: Record<string, unknown>): Money | null {
-  const a = args['amount'];
+  const a = args.amount;
   if (!a || typeof a !== 'object') return null;
   const m = a as Money;
   if (typeof m.amount !== 'string' || typeof m.currency !== 'string' || typeof m.decimals !== 'number') {
@@ -80,14 +80,14 @@ function getAmount(args: Record<string, unknown>): Money | null {
 }
 
 function getCounterpartyChain(args: Record<string, unknown>): string | null {
-  const to = args['to'];
+  const to = args.to;
   if (!to || typeof to !== 'object') return null;
   const c = to as { chain?: unknown };
   return typeof c.chain === 'string' ? c.chain : null;
 }
 
 function getCounterpartyId(args: Record<string, unknown>): string | null {
-  const to = args['to'];
+  const to = args.to;
   if (!to || typeof to !== 'object') return null;
   const c = to as { id?: unknown; address?: unknown };
   return typeof c.id === 'string' ? c.id : typeof c.address === 'string' ? c.address : null;
@@ -339,7 +339,7 @@ export function ruleSanctionsSurface(): PolicyRule {
     evaluate(ctx) {
       const t = extractTransfer(ctx);
       if (!t) return passResult(this.id, this.name);
-      const sanction = ctx.metadata?.['sanction'] as
+      const sanction = ctx.metadata?.sanction as
         | { verdict: 'clear' | 'flagged' | 'blocked'; reasons: string[]; provider: string }
         | undefined;
       if (!sanction) return passResult(this.id, this.name);

@@ -15,7 +15,7 @@
 import { z } from 'zod';
 import { tool } from '@veridex/agents/tools';
 import type { ToolContract } from '@veridex/agents';
-import { IdempotencyKey, Money, Counterparty } from '../types';
+import { IdempotencyKey, Money, type Counterparty } from '../types';
 import type { IdempotencyStore } from '../idempotency/IdempotencyStore';
 import type { SpendCeilings } from '../ceilings/SpendCeilings';
 import type { SanctionScreener } from '../sanctions/SanctionScreener';

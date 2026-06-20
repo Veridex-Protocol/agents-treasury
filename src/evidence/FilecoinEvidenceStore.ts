@@ -125,7 +125,7 @@ export function computeCidV1Raw(bytes: Uint8Array): string {
   cidBytes[0] = 0x01;
   cidBytes[1] = 0x55;
   cidBytes.set(multihash, 2);
-  return 'b' + base32LowerNoPad(cidBytes);
+  return `b${base32LowerNoPad(cidBytes)}`;
 }
 
 /** RFC 4648 base32 (lowercase, no padding) — the IPFS CIDv1 default. */

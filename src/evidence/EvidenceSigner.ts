@@ -114,7 +114,7 @@ export class Ed25519EvidenceSigner implements EvidenceSigner {
 
 function bufToHex(buf: Uint8Array): string {
   let s = '';
-  for (let i = 0; i < buf.length; i++) s += buf[i]!.toString(16).padStart(2, '0');
+  for (let i = 0; i < buf.length; i++) s += buf[i]?.toString(16).padStart(2, '0');
   return s;
 }
 

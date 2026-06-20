@@ -188,9 +188,9 @@ export function createTreasuryKit(opts: TreasuryKitOptions): TreasuryKit {
           if (opts.portal) {
             void opts.portal
               .requestApproval({
-                proposedAction: String(a['action'] ?? 'unknown'),
-                reason: String(a['reason'] ?? ''),
-                riskScore: typeof a['riskScore'] === 'number' ? (a['riskScore'] as number) : 50,
+                proposedAction: String(a.action ?? 'unknown'),
+                reason: String(a.reason ?? ''),
+                riskScore: typeof a.riskScore === 'number' ? (a.riskScore as number) : 50,
                 details: a as Record<string, unknown>,
               })
               .catch(() => {});
