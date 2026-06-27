@@ -54,6 +54,7 @@
     "dev": "tsup --watch",
     "test": "vitest run",
     "test:watch": "vitest",
+    "demo": "bun run demo/evidence-demo.ts",
     "lint": "tsc --noEmit",
     "clean": "rm -rf dist",
     "prepublishOnly": "bun run build"
