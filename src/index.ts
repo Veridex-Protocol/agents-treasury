@@ -37,6 +37,7 @@ export * from './idempotency/IdempotencyStore';
 export * from './ceilings/SpendCeilings';
 export * from './timelock/TimeLockManager';
 export * from './sanctions/SanctionScreener';
+export * from './sanctions/OracleSanctionScreener';
 
 // Reputation
 export * from './reputation/SbtReputationProvider';
