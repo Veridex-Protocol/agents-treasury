@@ -63,7 +63,7 @@
     "zod": "^3.22.0"
   },
   "peerDependencies": {
-    "@veridex/agents": "0.1.7",
+    "@veridex/agents": "0.1.8",
     "@veridex/agentic-payments": "2.0.8"
   },
   "peerDependenciesMeta": {
@@ -73,7 +73,7 @@
   },
   "devDependencies": {
     "@types/node": "^25.5.2",
-    "@veridex/agents": "0.1.7",
+    "@veridex/agents": "0.1.8",
     "tsup": "^8.0.0",
     "typescript": "^5.0.0",
     "vitest": "^1.0.0"
