@@ -1,6 +1,6 @@
 {
   "name": "@veridex/agents-treasury",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Veridex Treasury Kit — opinionated, safe money-movement primitives for agents (balance, transfer, escrow, x402, idempotency, ceilings, time-locks, sanctions, signed Evidence Bundles, SBT reputation, developer-portal telemetry).",
   "license": "MIT",
   "author": "Veridex Team",
